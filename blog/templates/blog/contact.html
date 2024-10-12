@@ -1,0 +1,190 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block content %}
+{% load custom_filters %}
+<div class="contact-container mt-4 animated fadeIn">
+    <h1 class="contact-title mb-4 text-center text-light">Contact Us</h1>
+    <p class="contact-description text-center mb-5 text-light">
+        If you have any questions, suggestions, or just want to say hello, feel free to reach out to us. We would love to hear from you!
+    </p>
+
+    <div class="contact-info mb-4 animated fadeInUp">
+        <h2 class="info-header h5 text-info text-center">Get in Touch</h2>
+        <div class="info-details lead text-center text-light">
+            <p><strong>Email:</strong> <a href="mailto:info@example.com" class="link-light">info@example.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+1234567890" class="link-light">+1 (234) 567-890</a></p>
+        </div>
+    </div>
+
+    <div class="contact-form mb-4">
+        <h2 class="form-header h5 text-info text-center">Contact Form</h2>
+        <form method="post" class="form-content border p-4 rounded shadow bg-dark animated fadeInUp">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.name.label_tag }}
+                {{ form.name|add_class:"form-control" }}
+                {% if form.name.errors %}
+                    <div class="text-danger">{{ form.name.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.email.label_tag }}
+                {{ form.email|add_class:"form-control" }}
+                {% if form.email.errors %}
+                    <div class="text-danger">{{ form.email.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                {{ form.message.label_tag }}
+                {{ form.message|add_class:"form-control" }}
+                {% if form.message.errors %}
+                    <div class="text-danger">{{ form.message.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="submit-button text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+    /* Custom styles */
+    body {
+        background-color: #343a40; /* Dark background */
+        font-family: 'Roboto', sans-serif;
+        color: #ffffff; /* Default text color */
+    }
+
+    .contact-title {
+        font-size: 3rem;
+        color: #007bff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-family: 'Lora', serif;
+        animation: pop 1s forwards;
+    }
+
+    .info-header {
+        font-size: 1.75rem;
+        color: #17a2b8;
+        margin-bottom: 1rem;
+        font-family: 'Lora', serif;
+        transition: color 0.3s ease;
+    }
+
+    .info-header:hover {
+        color: #138496;
+    }
+
+    .contact-description {
+        line-height: 1.6;
+        color: #d1d1d1; /* Lighter gray for description */
+        text-align: center;
+    }
+
+    .link-light {
+        color: #d1d1d1; /* Light link color */
+        text-decoration: none; /* No underline */
+    }
+
+    .link-light:hover {
+        text-decoration: underline; /* Underline on hover */
+    }
+
+    /* Form styling */
+    .form-content {
+        background-color: #495057; /* Darker background for form */
+        border: 1px solid #dee2e6; /* Light border for form */
+        padding: 20px; /* Padding inside the form */
+        border-radius: 15px; /* More rounded corners for the form */
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        max-width: 500px; /* Set a maximum width for the form */
+        margin: 0 auto; /* Center the form */
+    }
+
+    .form-content:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Dark shadow on hover */
+        transform: scale(1.02); /* Slightly enlarge on hover */
+    }
+
+    /* Input field styling */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%; /* Full width */
+        padding: 10px; /* Padding inside fields */
+        margin: 10px 0; /* Spacing between fields */
+        border: 1px solid #ced4da; /* Light border */
+        border-radius: 20px; /* More rounded corners */
+        font-size: 1rem; /* Font size */
+        transition: border-color 0.3s, box-shadow 0.3s;
+        background-color: #6c757d; /* Input field background */
+        color: #ffffff; /* Input text color */
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        border-color: #007bff; /* Change border color on focus */
+        outline: none; /* Remove default outline */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+    }
+
+    /* Button styling */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        color: #fff; /* Ensures white text on hover */
+        transform: translateY(-2px); /* Slightly lift button on hover */
+    }
+
+    /* Animations */
+    .animated {
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .fadeIn {
+        animation-name: fadeIn;
+    }
+
+    .fadeInUp {
+        animation-name: fadeInUp;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pop {
+        0% {
+            transform: scale(1);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+</style>
+{% endblock content %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

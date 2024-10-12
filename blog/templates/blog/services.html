@@ -1,0 +1,150 @@
+{% extends "blog/layout.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+<div class="container mt-2">
+    <h1 class="mb-4 text-center text-primary animate__animated animate__bounce">Our Web Development Services</h1>
+    <p class="text-center mb-5 text-muted">We offer a range of web development services to help you build a strong online presence. Here’s a look at what we can provide for you:</p>
+
+    <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+            <div class="card service-card animated fadeIn">
+                <img src="{% static 'images/webdev.png' %}" class="card-img-top service-image" alt="Web Design Services">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Custom Web Design</h5>
+                    <p class="card-text">Our custom web design services focus on creating visually appealing and user-friendly websites that align with your brand's identity.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card service-card animated fadeIn">
+                <img src="{% static 'images/ecomm.png' %}" class="card-img-top service-image" alt="E-commerce Development Services">
+                <div class="card-body">
+                    <h5 class="card-title text-success">E-commerce Development</h5>
+                    <p class="card-text">We specialize in building e-commerce websites that are secure, easy to navigate, and optimized for conversions to boost your online sales.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card service-card animated fadeIn">
+                <img src="{% static 'images/seo.jpeg' %}" class="card-img-top service-image" alt="SEO Services">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Search Engine Optimization (SEO)</h5>
+                    <p class="card-text">Improve your website's visibility on search engines with our SEO services. We implement effective strategies to increase organic traffic.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+            <div class="card service-card animated fadeIn">
+                <img src="{% static 'images/appdev.jpeg' %}" class="card-img-top service-image" alt="Web Application Development Services">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Web Application Development</h5>
+                    <p class="card-text">We build robust web applications that provide seamless user experiences and meet the unique needs of your business.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card service-card animated fadeIn">
+                <img src="{% static 'images/content.png' %}" class="card-img-top service-image" alt="Content Management System Services">
+                <div class="card-body">
+                    <h5 class="card-title text-light">Content Management Systems (CMS)</h5>
+                    <p class="card-text">We offer CMS solutions that enable you to manage your website content easily without any technical knowledge.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card service-card animated fadeIn">
+                <img src="{% static 'images/maintenace.jpg' %}" class="card-img-top service-image" alt="Website Maintenance Services">
+                <div class="card-body">
+                    <h5 class="card-title text-muted">Website Maintenance</h5>
+                    <p class="card-text">Our website maintenance services ensure your website remains updated, secure, and running smoothly with regular checks and backups.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #333; /* Dark background */
+        color: #f4f4f4; /* Light text color */
+    }
+
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5rem;
+        color: #007bff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        margin-top: 20px; /* Add margin-top for spacing */
+        margin-bottom: 20px; /* Ensure there's space below */
+    }
+
+    .text-muted {
+        font-size: 1.1rem;
+        color: #aaa; /* Adjust muted text color */
+    }
+
+    .service-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Darker shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7); /* Darker shadow on hover */
+    }
+
+    .service-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #e0e0e0; /* Lighter text for readability */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .animate__animated {
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    
+</style>
+{% endblock content %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

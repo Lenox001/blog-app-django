@@ -1,0 +1,21 @@
+/* Custom styles for navbar */
+.navbar {
+    padding: 1rem 1.5rem; /* Increased padding */
+}
+
+.nav-link {
+    padding: 0.5rem 1rem; /* Added padding to nav links */
+    margin: 0 0.5rem; /* Added margin for spacing */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+
+.btn-link {
+    color: #dc3545; /* Color for the logout button */
+}
+
+.btn-link:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #c82333; /* Darker red on hover */
+}
+

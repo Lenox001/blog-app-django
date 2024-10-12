@@ -1,0 +1,44 @@
+# Python-related ignores
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+*.env
+
+# Virtual environments
+env/
+.venv/
+venv/
+
+# Django-specific ignores
+db.sqlite3
+/staticfiles/
+/media/
+
+# Ignore local settings
+/local_settings.py
+
+# Vercel-specific ignore
+.vercel/
+
+# Logs
+*.log
+
+# Ignore static files after collection
+/static/
+
+# Ignore development and production settings
+*.local
+
+# Ignore environment variable files
+.env
+*.env
+
+# Ignore IDE and editor-specific files
+.vscode/
+.idea/
+*.swp
+
+# Ignore deployment artifacts
+.DS_Store

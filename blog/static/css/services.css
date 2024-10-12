@@ -1,0 +1,22 @@
+/* Style for service images */
+.service-image {
+    width: 100%; /* Make images responsive */
+    height: 200px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensure images cover the entire area */
+}
+
+/* Style for card titles */
+.card-title {
+    font-size: 1.25rem; /* Larger font size for better readability */
+    font-weight: bold; /* Bold font for emphasis */
+}
+
+/* Style for card text */
+.card-text {
+    font-size: 0.9rem; /* Slightly larger text for better readability */
+}
+
+/* Center headings */
+h1, p {
+    text-align: center; /* Center align the main heading and paragraph */
+}
